@@ -17,7 +17,7 @@ namespace console
             const string CommandExit = "4";
             
             Random random = new Random();
-            int randomNumber = rnd.Next();
+            int randomNumber = random.Next();
             
             string userInput;
             bool canCycleWork = true;
