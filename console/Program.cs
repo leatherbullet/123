@@ -11,18 +11,18 @@ namespace console
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            int number = rnd.Next();
-            
             const string CommandShowNumber = "1";
             const string CommandShowDayOfWeek = "2";
             const string CommandClearConsole = "3";
             const string CommandExit = "4";
             
+            Random random = new Random();
+            int randomNumber = rnd.Next();
+            
             string userInput;
-            bool cycle = true;
+            bool canCycleWork = true;
 
-            while (cycle == true)
+            while (canCycleWork == true)
             {
                Console.WriteLine("выберете нужное действие");
                Console.WriteLine($"{CommandShowNumber} - показать случайное число");
@@ -34,7 +34,7 @@ namespace console
                switch (userInput)
                {
                   case CommandShowNumber:
-                      Console.WriteLine($"случайное число:{number}\n");
+                      Console.WriteLine($"случайное число:{randomNumber}\n");
                       break;
 
                  case CommandShowDayOfWeek:
@@ -46,7 +46,7 @@ namespace console
                      break;
 
                  case CommandExit:
-                     cycle = false;
+                     canCycleWork = false;
                      break;
 
                  default:
