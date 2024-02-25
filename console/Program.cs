@@ -13,37 +13,45 @@ namespace console
         {
             Random rnd = new Random();
             int number = rnd.Next();
-
+            
+            const string CommandShowNumber = "1";
+            const string CommandShowDayOfWeek = "2";
+            const string CommandClearConsole = "3";
+            const string CommandExit = "4";
+            
             string userInput;
-
             bool cycle = true;
 
             while (cycle == true)
             {
-                Console.WriteLine("выберете нужное действие");
-                Console.WriteLine("1 - показать случайное число");
-                Console.WriteLine("2 - узнать какой сегодня день недели");
-                Console.WriteLine("3 - очистить консоль");
-                Console.WriteLine("4 - выход");
-                userInput = Console.ReadLine();
+               Console.WriteLine("выберете нужное действие");
+               Console.WriteLine($"{CommandShowNumber} - показать случайное число");
+               Console.WriteLine($"{CommandShowDayOfWeek} - узнать какой сегодня день недели");
+               Console.WriteLine($"{CommandClearConsole} - очистить консоль");
+               Console.WriteLine($"{CommandExit} - выход");
+               userInput = Console.ReadLine();
 
-                switch (userInput)
-                {
-                    case "1":
-                        Console.WriteLine($"случайное число:{number}\n");
-                        break;
-                    case "2":
-                        Console.WriteLine("воскресенье\n");
-                        break;
-                    case "3":
-                        Console.Clear();
-                        break;
-                    case "4":
-                        cycle = false;
-                        break;
-                    default:
-                        Console.WriteLine("введена неверная операция\n");
-                        break;
+               switch (userInput)
+               {
+                  case CommandShowNumber:
+                      Console.WriteLine($"случайное число:{number}\n");
+                      break;
+
+                 case CommandShowDayOfWeek:
+                     Console.WriteLine("воскресенье\n");
+                     break;
+
+                 case CommandClearConsole:
+                     Console.Clear();
+                     break;
+
+                 case CommandExit:
+                     cycle = false;
+                     break;
+
+                 default:
+                     Console.WriteLine("такой команды нет\n");
+                     break;
                 }
             }
         }
